@@ -32,8 +32,8 @@ public abstract class AbstractPage {
 	@FindBy(xpath="//*[@id='zul-bar']//a[@class='zul-bar-user-item-locale zul-bar-icon-spacing hassubmenu']")
 	private WebElement listeLangue;
 	
-	@FindBy(xpath="//div[@class='menu-outer']//span[.='Français']")
-	private WebElement langueFrançais;
+//	@FindBy(xpath="//div[@class='menu-outer']//span[.='Français']")
+//	private WebElement langueFrançais;
 	
 	@FindBy(xpath="//div[@class='header-search']//input")
 	private WebElement champRehercheRapide;
