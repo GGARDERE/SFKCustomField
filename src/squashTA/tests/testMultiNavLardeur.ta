@@ -1,0 +1,12 @@
+TEST :
+
+LOAD defaultBrowser.properties AS defaultBrowser.file
+CONVERT defaultBrowser.file TO properties(structured) AS defaultBrowser.prop
+
+LOAD Lardeur/src/main as bundleLardeur.file
+
+
+
+CONVERT bundleLardeur.file TO file(param) USING context_script_params,defaultBrowser.prop AS BundleLardeurConverti.file
+
+# EXECUTE_SELENIUM2 BundleLardeurConverti.file WITH MAIN CLASS test.PremierTest AND COMPILE OPTIONS ${-encoding UTF-8}

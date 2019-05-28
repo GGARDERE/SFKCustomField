@@ -1,0 +1,12 @@
+
+
+TEST :
+LOAD fichier.txt AS resource
+EXECUTE log WITH resource USING $(logLevel:info) as $()
+
+LOAD fichier1.properties AS properties1.file
+CONVERT properties1.file TO properties(structured) AS properties1.prop
+
+CONVERT resource TO file(param) USING properties1.prop AS fichierConverti.file
+
+EXECUTE log WITH fichierConverti.file USING $(logLevel:info) as $()
